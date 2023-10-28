@@ -19,3 +19,5 @@ jobs:
         run: printenv | grep GITHUB
       - name: print ubuntu version
         run: lsb_release -a
+      - name: print architecture
+        run: uname -a
