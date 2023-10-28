@@ -17,3 +17,5 @@ jobs:
         run: ls -la
       - name: print envs
         run: printenv | grep GITHUB
+      - name: print ubuntu version
+        run: lsb_release -a
