@@ -1,0 +1,17 @@
+name: test
+on:
+  push:
+    branches:
+      - *
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the repository
+        uses: actions/checkout@v3
+      - name: print working directory
+        run: pwd
+      - name: print folder and files
+        run: ls -la
