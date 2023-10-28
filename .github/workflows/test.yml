@@ -15,3 +15,5 @@ jobs:
         run: pwd
       - name: print folder and files
         run: ls -la
+      - name: print envs
+        run: printenv
