@@ -16,4 +16,4 @@ jobs:
       - name: print folder and files
         run: ls -la
       - name: print envs
-        run: printenv
+        run: printenv | grep GITHUB
