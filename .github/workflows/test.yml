@@ -32,12 +32,4 @@ jobs:
       - name: print folder and files
         run: ls -la
       - name: install docker dependencies
-        run: sudo dpkg -i ./containerd.io_1.6.24-1_arm64.deb \
-            ./docker-ce_24.0.7-1~ubuntu.22.04~jammy_arm64.deb \
-            ./docker-ce-cli_24.0.7-1~ubuntu.22.04~jammy_arm64.deb \
-            ./docker-buildx-plugin_0.11.2-1~ubuntu.22.04~jammy_arm64.deb \
-            ./docker-compose-plugin_2.21.0-1~ubuntu.22.04~jammy_arm64.deb
-      - name: start docker
-        run: sudo service docker start
-      - name: run hello world
-        run: sudo docker run hello-world
+        run: sudo dpkg -i containerd.io_1.6.24-1_arm64.deb
