@@ -20,16 +20,16 @@ jobs:
       - name: print architecture
         run: uname -a
       - name: download containerd
-        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/containerd.io_1.6.24-1_arm64.deb
+        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/containerd.io_1.6.24-1_amd64.deb
       - name: download docker-ce
-        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-ce_24.0.7-1~ubuntu.22.04~jammy_arm64.deb
+        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-ce_24.0.7-1~ubuntu.22.04~jammy_amd64.deb
       - name: download docker-ce-cli
-        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-ce-cli_24.0.7-1~ubuntu.22.04~jammy_arm64.deb
+        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-ce-cli_24.0.7-1~ubuntu.22.04~jammy_amd64.deb
       - name: download docker-buildx-plugin
-        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-buildx-plugin_0.11.2-1~ubuntu.22.04~jammy_arm64.deb
+        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-buildx-plugin_0.11.2-1~ubuntu.22.04~jammy_amd64.deb
       - name: download docker-compose-plugin
-        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-compose-plugin_2.21.0-1~ubuntu.22.04~jammy_arm64.deb
+        run: curl -O https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/arm64/docker-compose-plugin_2.21.0-1~ubuntu.22.04~jammy_amd64.deb
       - name: print folder and files
         run: ls -la
       - name: install docker dependencies
-        run: sudo dpkg -i containerd.io_1.6.24-1_arm64.deb
+        run: sudo dpkg -i containerd.io_1.6.24-1_amd64.deb
