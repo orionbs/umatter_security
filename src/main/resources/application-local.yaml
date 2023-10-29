@@ -1,0 +1,10 @@
+database:
+  source:
+    driver: postgresql
+    host: localhost
+    port: 5432
+    user: 8ngzhe052ele
+    password: 1wpegrn67kac
+    database: 284jkfwxuido
+  version:
+    enabled: true
