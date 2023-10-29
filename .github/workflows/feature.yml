@@ -1,0 +1,59 @@
+name: feature
+on:
+  push:
+    branches:
+      - 'feature/**'
+
+jobs:
+  validate:
+    name: validate wrapper
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gradle/wrapper-validation-action@v1.1.0
+  assemble:
+    name: assemble project
+    needs:
+      - validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - uses: gradle/gradle-build-action@v2.9.0
+        with:
+          arguments: assemble
+  test:
+    name: test project
+    needs:
+      - assemble
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - uses: gradle/gradle-build-action@v2.9.0
+        with:
+          arguments: test
+      - uses: actions/upload-artifact@v3
+        with:
+          name: reports
+          path: build/reports
+  build:
+    name: build project
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+      - uses: gradle/gradle-build-action@v2.9.0
+        with:
+          arguments: build
