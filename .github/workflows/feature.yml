@@ -22,9 +22,9 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-      - uses: gradle/wrapper-validation-action@v1.1.0
+      - uses: gradle/gradle-build-action@v2.9.0
         with:
-          args: assemble
+          arguments: assemble
   test:
     name: test project
     needs:
@@ -36,9 +36,9 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-      - uses: gradle/wrapper-validation-action@v1.1.0
+      - uses: gradle/gradle-build-action@v2.9.0
         with:
-          args: test
+          arguments: test
       - uses: actions/upload-artifact@v3
         with:
           name: reports
@@ -54,6 +54,6 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-      - uses: gradle/wrapper-validation-action@v1.1.0
+      - uses: gradle/gradle-build-action@v2.9.0
         with:
-          args: build
+          arguments: build
